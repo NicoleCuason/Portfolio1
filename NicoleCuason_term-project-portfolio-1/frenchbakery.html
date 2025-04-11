@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Coeur de la France</title>
+    <meta name="description" content="An elegant branding and design work for a French bakery mobile app, featuring warm tones and artisan-style visuals.">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/about.css"/>
+    <link rel="stylesheet" href="css/projects.css"/>
+    <link rel="stylesheet" href="css/corgis.css"/>
+    <link rel="stylesheet" href="css/frenchbakery.css"/>
+    <link rel="stylesheet" href="css/singaporetravelposter.css"/>
+    <link rel="stylesheet" href="css/montdolent.css"/>
+
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="header-container">
+        <div class="nav-wrapper">
+          <img
+            src="images/logo.png"
+            alt="Logo"
+            class="logo"
+          />
+
+          <!-- Hamburger Menu Icon -->
+          <div class="hamburger" id="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+
+          <nav class="main-nav" id="nav-links">
+              <a href="home.html" class="nav-link">HOME</a>
+              <a href="about.html" class="nav-link">ABOUT</a>
+              <a href="projects.html" class="nav-link nav-link-active">PROJECTS</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="project">
+      <h1>Le Coeur de la France Mobile App</h1>
+      <br>
+      <img src="images/MobileApp.png" alt="Overview" title="Project 2" width="1000px"/>
+      <br>
+      <h2>UX/UI Design</h2>
+      <br>
+      <p>I designed a mobile app for a French bakery using Figma and PhotoShop, enabling easy menu browsing, order placement, and pickup/delivery options, with receipt notifications to improve satisfaction.</p>
+      <br>
+      <h2 class="project-overview-title">Project Overview</h2>
+      <br>
+      <p>For my first project in UX/UI Design Strategy 1, our instructor required us to design a mobile app. After reviewing the course materials, I decided to create an app for a French bakery, aiming to make it easier for customers, especially those in remote areas, to explore the menu and place orders. I conducted research on bakery apps to identify common features and design trends, focusing on user preferences and behavior. I sketched initial ideas, emphasizing functionality and intuitive flow, and found key trends such as minimalist design, easy navigation, and payment system integration. To stand out from competitors, I focused on unique features like personalized recommendations, seasonal promotions, and a community-driven recipe-sharing section to engage users.</p>
+      <br>
+      <p>Since I personally studied basic French, I named the bakery "Le Coeur de la France" (The Heart of France). For the logo, I combined a heart and the Eiffel Tower in Adobe Illustrator, using a color scheme inspired by the Parisian flag. I also created user personas and scenarios, using empathy and journey mapping to understand the users’ thoughts, feelings, and actions at each stage of the user experience. This helped define the user flow and ensure intuitive app features, including simplifying navigation, providing personalized recommendations, and ensuring smooth transitions. The process led me to rethink my design assumptions and focus on creating a flexible, accessible app for a broad range of users.</p>
+      <br>
+      <p>I designed low- to medium-fidelity wireframes and prototypes in Figma, building a seamless, intuitive user experience. After user testing and gathering feedback, I refined the design and finalized a PowerPoint presentation to showcase the process. Following the presentation, peer feedback helped me identify areas for improvement. This process allowed me to enhance my Figma skills, especially with tools like auto-layout, interactive components, and prototyping. I continued refining the wireframes and high-fidelity prototype based on peer suggestions, improving navigation and adding more visual cues. I incorporated pink, purple, and beige accents into the high-fidelity prototype to evoke sweetness and warmth, aligning with the app’s theme.</p>
+      <br>
+      <p>Finally, I refined my PowerPoint slides for clarity and consistency before final submission.</p>
+      <br>
+      <p>(Check out <a href="https://www.figma.com/proto/4ctCANxJcFtQqM0LNZY1cq/FRENCH-BAKERY?node-id=17-2&p=f&t=Gn14NMP1DnHDtitg-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=17%3A2" target="_blank" class="view-demo">View Figma Prototype</a>.)</p>
+
+      <div class="cta-container">
+        <a href="projects.html" class="cta-button">See More Projects</a>
+      </div>
+    </section>
+
+    <footer>
+      <section class="contact-section">
+        <div class="contact-content">
+          <h2 class="contact-title">I'd Love to Hear From You</h2>
+          <div class="contact-info">
+            <p class="contact-description">
+              Feel free to reach out if you have any questions about my digital and web design work! I'm eager to collaborate on any creative design project!
+            </p>
+            <div class="contact-links">
+              <span class="email">nccuason1993@gmail.com</span>
+              <a href="https://ca.linkedin.com/in/nicole-cuason-70b54428a" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+              <a href="tel:+17787797192"><img src="images/phone.png" alt="Call Me"></a>
+              <a href="mailto:nccuason1993@gmail.com"><img src="images/mail.png" alt="Email Me"></a>
+              <a href="https://github.com/NicoleCuason"><img src="images/github.png" alt="GitHub"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script>
+      // JavaScript for toggling the hamburger menu
+      const hamburger = document.getElementById("hamburger-menu");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active"); // Toggle the active class to show/hide the menu
+        hamburger.classList.toggle("active"); // Optional: You can animate the hamburger icon itself if you want
+      });
+
+      // Optional: Smooth transition for nav links
+      navLinks.style.transition = 'transform 0.3s ease-in-out';
+    </script>
+
+  </body>
+</html>
+

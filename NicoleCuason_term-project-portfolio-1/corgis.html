@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corgis In UK</title>
+    <meta name="description" content="A playful graphic design project featuring Corgis in iconic UK settings, blending photo manipulation techniques.">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/about.css"/>
+    <link rel="stylesheet" href="css/projects.css"/>
+    <link rel="stylesheet" href="css/corgis.css"/>
+    <link rel="stylesheet" href="css/frenchbakery.css"/>
+    <link rel="stylesheet" href="css/singaporetravelposter.css"/>
+    <link rel="stylesheet" href="css/montdolent.css"/>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="header-container">
+        <div class="nav-wrapper">
+          <img
+            src="images/logo.png"
+            alt="Logo"
+            class="logo"
+          />
+
+          <!-- Hamburger Menu Icon -->
+          <div class="hamburger" id="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+
+          <nav class="main-nav" id="nav-links">
+              <a href="home.html" class="nav-link">HOME</a>
+              <a href="about.html" class="nav-link">ABOUT</a>
+              <a href="projects.html" class="nav-link nav-link-active">PROJECTS</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="project">
+      <h1>Corgis In UK</h1>
+      <br>
+      <img src="images/corgis2025.png" alt="Overview" title="Project 1" width="1000px"/>
+      <br>
+      <h2>Graphic Design</h2>
+      <p>This project was created using Photoshop with both destructive and non-destructive editing techniques, blending multiple images.</p>
+      <br>
+      <h2 class="project-overview-title">Project Overview</h2>
+      <br>
+      <p>For my first Photoshop assignment, I was tasked with combining at least three photos to create a "destructive" image. This term referred to an artistic approach where elements are manipulated or distorted to form something unexpected or unusual. The goal was to design an image that was both humorous and appealing to a younger audience. To begin, I watched several tutorial videos to familiarize myself with essential Photoshop techniques, such as layer masking, blending modes, and color correction.</p>
+      <br>
+      <p> To ensure my design would resonate with the target demographic, I conducted a quick survey with a group of young people about their favorite images. The majority expressed a strong preference for dogs, with many specifically mentioning Corgis, likely due to their endearing appearance and popularity tied to the British royal family. Based on this feedback, I chose Corgis as the central theme for my project.</p>
+      <br>
+      <p>I decided to create a playful and charming image featuring Corgis wearing royal crowns, set against an English backdrop. This concept merged the beloved characteristics of the dogs with a whimsical, regal touch, making it both fun and appealing to dog lovers.</p>
+      <br>
+      <p>In Photoshop, I applied several techniques to enhance the image. I used layer masking to seamlessly blend the Corgis with their new royal crowns, adjusting shadows and highlights to ensure they appeared naturally integrated into the scene. I also employed color correction to enhance the fur textures, giving them a more vibrant and realistic appearance. Additionally, I refined the crowns by adjusting their brightness and contrast to make them appear more regal. To give the image a polished finish, I removed unnecessary elements and smoothed the edges of each layer, ensuring the overall composition was clean and cohesive.</p>
+      <br>
+      <p>The final image of the royal Corgis is lively and playful, effectively capturing the fun-loving spirit of dog lovers while also showcasing my Photoshop skills. This approach could easily translate into a professional project, such as a branding campaign or social media content aimed at a youthful, trendy audience.</p>
+
+      <div class="cta-container">
+        <a href="projects.html" class="cta-button">See More Projects</a>
+      </div>
+    </section>
+
+    <footer>
+      <section class="contact-section">
+        <div class="contact-content">
+          <h2 class="contact-title">I'd Love to Hear From You</h2>
+          <div class="contact-info">
+            <p class="contact-description">
+              Feel free to reach out if you have any questions about my digital and web design work! I'm eager to collaborate on any creative design project!
+            </p>
+            <div class="contact-links">
+              <span class="email">nccuason1993@gmail.com</span>
+              <a href="https://ca.linkedin.com/in/nicole-cuason-70b54428a" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+              <a href="tel:+17787797192"><img src="images/phone.png" alt="Call Me"></a>
+              <a href="mailto:nccuason1993@gmail.com"><img src="images/mail.png" alt="Email Me"></a>
+              <a href="https://github.com/NicoleCuason"><img src="images/github.png" alt="GitHub"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script>
+      // JavaScript for toggling the hamburger menu
+      const hamburger = document.getElementById("hamburger-menu");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active"); // Toggle the active class to show/hide the menu
+        hamburger.classList.toggle("active"); // Optional: You can animate the hamburger icon itself if you want
+      });
+
+      // Optional: Smooth transition for nav links
+      navLinks.style.transition = 'transform 0.3s ease-in-out';
+    </script>
+
+
+  </body>
+</html>
+

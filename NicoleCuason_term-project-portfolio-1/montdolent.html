@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mont Dolent Restaurant Website Design</title>
+    <meta name="description" content="A fictional restaurant, reflecting European luxury and elegance through visual storytelling.">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/about.css"/>
+    <link rel="stylesheet" href="css/projects.css"/>
+    <link rel="stylesheet" href="css/corgis.css"/>
+    <link rel="stylesheet" href="css/frenchbakery.css"/>
+    <link rel="stylesheet" href="css/singaporetravelposter.css"/>
+    <link rel="stylesheet" href="css/montdolent.css"/>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="header-container">
+        <div class="nav-wrapper">
+          <img
+            src="images/logo.png"
+            alt="Logo"
+            class="logo"
+          />
+
+          <!-- Hamburger Menu Icon -->
+          <div class="hamburger" id="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+
+          <nav class="main-nav" id="nav-links">
+              <a href="home.html" class="nav-link">HOME</a>
+              <a href="about.html" class="nav-link">ABOUT</a>
+              <a href="projects.html" class="nav-link nav-link-active">PROJECTS</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="project">
+      <h1>Mont Dolent Restaurant Website</h1>
+      <br>
+      <img src="images/restaurant.png" alt="Overview" title="Project 4" width="100%"/>
+      <br>
+      <h2>Web Design</h2>
+      <br>
+      <p>I designed a sophisticated website for the fictional 'Mont Dolent' restaurant using Photoshop for images and Wix for development, showcasing a high-end European-inspired menu with a luxurious, elegant atmosphere.</p>
+      <br>
+      <h2 class="project-overview-title">Project Overview</h2>
+      <br>
+      <p>To ensure the website captured the essence of both the menu and the restaurant's ambiance, I began with an in-depth interview with the chef to understand her vision, culinary inspirations, and the type of experience she wanted to offer. Drawing from her love for European travel and luxury brands, I conducted extensive research on regional dishes and curated high-quality images that showcased the beauty and sophistication of each plate.</p>
+      <br>
+      <p>I selected a sleek and minimalist Wix template that embodied the high-end aesthetic she envisioned. The design featured elegant typography, generous white space, and a refined color palette of cream, beige, and deep charcoal—accented with subtle gold and burgundy tones for warmth and luxury. These additions helped soften the starkness of the original layout while drawing attention to key sections like call-to-actions and buttons.</p>
+      <br>
+      <p>Inspired by her travels to France, Italy, and Switzerland, the restaurant was named Mont Dolent—a mountain that borders all three countries. This symbolic name tied the concept together, connecting the menu’s culinary diversity with a shared sense of place and culture.</p>
+      <br>
+      <p>The site was designed with a clear, intuitive structure to allow visitors to explore the menu, learn about the restaurant’s offerings, and experience the luxurious ambiance from their devices. The layout was optimized for both desktop and mobile, ensuring seamless navigation and a visually rich experience on all platforms.</p>
+      <br>
+      <p>Initial feedback revealed that the minimalist design felt too stark. In response, I introduced deeper color accents and refined the visual hierarchy to highlight dishes and features more effectively. After multiple iterations and testing phases, the final version successfully balanced elegance with warmth, reflecting both the chef’s vision and the restaurant’s luxurious personality.</p>
+      <br>
+      <p>The client was very pleased with the final result, appreciating the thoughtful revisions and the way the site brought her concept to life.</p>
+      <br>
+      <p>(Check out <a href="https://ncc93celeb.wixsite.com/my-site-2" target="_blank" class="view-demo">www.montdolentrestaurant.com</a>.)</p>
+
+      <div class="cta-container">
+        <a href="projects.html" class="cta-button">See More Projects</a>
+      </div>
+    </section>
+
+    <footer>
+      <section class="contact-section">
+        <div class="contact-content">
+          <h2 class="contact-title">I'd Love to Hear From You</h2>
+          <div class="contact-info">
+            <p class="contact-description">
+              Feel free to reach out if you have any questions about my digital and web design work! I'm eager to collaborate on any creative design project!
+            </p>
+            <div class="contact-links">
+              <span class="email">nccuason1993@gmail.com</span>
+              <a href="https://ca.linkedin.com/in/nicole-cuason-70b54428a" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+              <a href="tel:+17787797192"><img src="images/phone.png" alt="Call Me"></a>
+              <a href="mailto:nccuason1993@gmail.com"><img src="images/mail.png" alt="Email Me"></a>
+              <a href="https://github.com/NicoleCuason"><img src="images/github.png" alt="GitHub"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script>
+      // JavaScript for toggling the hamburger menu
+      const hamburger = document.getElementById("hamburger-menu");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active"); // Toggle the active class to show/hide the menu
+        hamburger.classList.toggle("active"); // Optional: You can animate the hamburger icon itself if you want
+      });
+
+      // Optional: Smooth transition for nav links
+      navLinks.style.transition = 'transform 0.3s ease-in-out';
+    </script>
+
+  </body>
+</html>
+
