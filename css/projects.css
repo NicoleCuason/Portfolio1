@@ -1,0 +1,709 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Allow footer to be pushed down */
+}
+
+/* Hamburger menu icon (hidden by default) */
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  background-color: #192026;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* Show the hamburger menu on small screens */
+@media (max-width: 640px) {
+  .hamburger {
+    display: flex;
+    z-index: inherit;
+  }
+
+  /* Hide the main navigation links on small screens */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000; /* Ensure nav menu is above other elements */
+    position: absolute;  /* Already set in mobile media query */
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+}
+  
+/* Header Styles */
+.main-header {
+  background-color: #fff;
+  border: 1px solid #fff;
+  padding: 13px 70px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #192026;
+}
+
+.header-container {
+  max-width: 1430px;
+  margin: 0 auto;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 98px;
+  height: 99px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #192026;
+}
+
+.nav-link-active {
+  color: #b79e76;
+}
+
+/* Hero Section Animation */
+@keyframes heroAnimation {
+  0% {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initially slide down */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Final position */
+  }
+}
+  
+/* Hero Section Styles*/
+  .hero-section {
+    background-color: rgba(191, 136, 151, 1);
+    border: 1px solid rgba(191, 136, 151, 1);
+    padding: 43px 90px 64px;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    animation: heroAnimation 1.5s ease-out; /* Apply hero animation */
+    animation-delay: 0.3s; /* Optional: delay for better effect */
+  }
+  
+  .hero-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1383px;
+    margin: 0 auto;
+    margin-bottom: -33px;
+    margin-top: -33px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .quote-mark {
+    width: 100%;
+    height: 100%;
+    margin-top: 25px;
+  }
+  
+  /* Hero Title Animation (Optional: Adding fade-in to text) */
+  .hero-title {
+    flex-grow: 1;
+    font-size: 70px;
+    font-weight: 650;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    opacity: 0; /* Start invisible */
+    animation: fadeInText 1.5s ease-out forwards; /* Apply text fade-in */
+    animation-delay: 0.8s; /* Delay to sync with other animation */
+  }
+
+  @keyframes fadeInText {
+    0% {
+      opacity: 0; /* Initially hidden */
+    }
+    100% {
+      opacity: 1; /* Fully visible */
+    }
+  }
+
+  /* Hero Section - Whitestar image with glowing gold accent strokes */
+.accent {
+  width: 100%;
+  height: 100%;
+  max-width: 200px; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7)); /* Glowing gold stroke effect */
+  transition: filter 0.3s ease-in-out; /* Smooth transition */
+  animation: shimmer 2s infinite; /* Apply shimmering animation */
+  animation-delay: 0.5s; /* Delay to sync with other animations */
+}
+
+/* Define the shimmering animation */
+@keyframes shimmer {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5)); /* Start with light glow */
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 1)); /* Stronger glow in the middle */
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5)); /* Back to original glow */
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 991px) {
+  .accent {
+    max-width: 100px; /* Adjust the size on smaller screens */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6)); /* Slight glow for mobile */
+  }
+
+  .accent:hover {
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8)); /* Stronger glow on hover for mobile */
+  }
+
+  .hero-title {
+    font-size: 25px; /*Make title smaller on medium screens*/
+    margin-top: 30px;
+  }
+
+  .hero-container {
+    flex-direction: column; /*Stack the items vertically on smaller screens*/
+    gap: 10px;
+  }
+}
+
+/* Additional styles for very small screens (e.g., mobile) */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 25px; /* Smaller text on mobile */
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    margin-left: 1px;
+    text-align: center; /* Center the title for small screens */
+  }
+
+  .hero-section {
+    padding: 40px 20px; /* Adjust padding for smaller screens */
+  }
+
+  .hero-container {
+    flex-direction: column; 
+    gap: 20px; /* Space out the items */
+  }
+
+  .accent {
+    max-width: 120px; /* Make accent image smaller on small screens */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
+
+/* Projects Grid */
+/* Grid container */
+.container, .section1, .section2, .section3 {
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  margin: 0 auto;
+  max-width: 1080px;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+
+/* Define the fade-in animation */
+@keyframes fadeInGrid {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the fade-in effect to the grid items */
+.card {
+  grid-column: span 6;
+  background-color: #fff;
+  border: 20px solid black;
+  text-align: center;
+  padding: 1.5rem;
+  opacity: 0; /* Start as invisible */
+  transform: translateY(20px); /* Start slightly below */
+  animation: fadeInGrid 1s ease-out forwards; /* Apply fade-in animation */
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.2s; /* Add a delay for staggered effect */
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.4s; /* Add a delay for staggered effect */
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.6s; /* Add a delay for staggered effect */
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.8s; /* Add a delay for staggered effect */
+}
+
+/*Card Link styles*/
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover {
+  transform: scale(1.05); /*Optional: Adds a hover effect*/
+  transition: all 0.3s ease-in-out;
+}
+
+/* Ensure images are the same size for all cards */
+.card img {
+  width: 100%; 
+  height: auto; 
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+/* Project category */
+.project-category {
+  font-size: 20px;
+  font-weight: 700;
+  color: #BF8897; 
+  margin-bottom: 10px;
+  text-align: left; 
+  display: block; 
+  margin-left: 0; 
+}
+
+/* Card title (h2) */
+.card h2 {
+  font-size: 25px;
+  font-weight: 600;
+  color: #192026; 
+  text-align: left; 
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Paragraph (description) */
+.project-description {
+  font-size: 22px;
+  color: #333;
+  text-align: left; 
+  display: block; 
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* Other text column styles */
+.text-column {
+  grid-column: span 3; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.text-column-big {
+  grid-column: span 6; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.text-column h1 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.text-column p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: black;
+}
+
+.image-column {
+  grid-column: span 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-column-big {
+  grid-column: span 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-column-big img {
+  max-width: 400px;
+  height: 400px;
+}
+
+.image-column img {
+  max-width: 400px; 
+  height: 400px; 
+}
+
+/* General heading and paragraph styles */
+h2 {
+  font-family: 'Poppins' sans-serif;
+  color: black;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+p {
+  font-family: 'Poppins' sans-serif;
+  color: darkgrey;
+  font-size: 80px;
+  font-weight: 400;
+}
+
+
+/* Media Queries for Adjusting the Grid */
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: 1fr; 
+    gap: 20px; /* Adjust the gap between cards on smaller screens */
+    padding: 0 20px; /* Ensure padding */
+  }
+
+  .card {
+    grid-column: span 1; /* Make each card span full width */
+    height: auto; 
+  }
+
+  .card img {
+    max-width: 100%; /* Ensure the images fit within the card */
+  }
+
+  .project-image-wrapper {
+    padding: 10px;
+  }
+
+  .project-content {
+    padding: 15px;
+  }
+
+  .project-category,
+  .project-title {
+    font-size: 18px; 
+  }
+
+  .project-description {
+    font-size: 14px;
+  }
+}
+
+/* Additional Media Query for Smaller Screens */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr; /* Stack the cards vertically */
+    padding: 0 10px;
+  }
+
+  .card {
+    grid-column: span 1;
+  }
+
+  .card img {
+    max-width: 100%;
+  }
+
+  .project-category {
+    font-size: 16px; 
+  }
+
+  .card h2 {
+    font-size: 18px; 
+  }
+
+  .project-description {
+    font-size: 14px;
+  }
+}
+
+/* Additional Media Query for Larger Screens */
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+  }
+
+  .project-card {
+    height: 100%; 
+  }
+}
+
+
+
+ /* Footer Contact Section Adjustments */
+.contact-section {
+  background-color: rgba(191, 136, 151, 0.6);
+  border: 1px solid rgba(191, 136, 151, 0.6);
+  padding: 40px 196px; /*reduced padding for mobile view*/
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title {
+  color: #000;
+  font-size: 28px;
+  font-weight: 700;
+  align-items: flex-start;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-description {
+  color: #000;
+  font-size: 16px; /*Adjust font size*/
+  font-weight: 400;
+  max-width: 100%; /*Ensure text wraps properly*/
+  margin-bottom: 20px; 
+  padding: 0 10px; /*Add padding to ensure content isn't too close to edges*/;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-links a {
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+}
+
+.contact-links img {
+  width: 100%;
+  height: 100%;
+}
+
+.email {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.social-link img {
+  width: 33px;
+  height: 33px;
+}
+
+.cta-button {
+  display: inline-block;
+  color: #192026;
+  font-size: 24px;
+  font-weight: 700;
+  width: 270px;
+  height: 42px;
+  background-color: #b79e76;
+  border: 1px solid #192026;
+  text-decoration: none;
+  text-align: center;
+  line-height: 42px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+  
+/* Media Queries */
+@media (max-width: 991px) {
+  .main-header {
+    padding: 0 40px;
+  }
+
+  .hero-section {
+    padding: 40px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .featured-section {
+    padding: 50px 40px;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+  }
+
+  .contact-section {
+    padding: 40px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+/*Show the navigation links when hamburger is clicked */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .main-header {
+    padding: 0 20px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .main-nav.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-link {
+    font-size: 20px; /* Increase font size for readability */
+    padding: 10px;
+    text-align: center;
+    display: block; /* Ensure they stack properly */
+    width: 100%;
+  }
+
+  .nav-link:hover {
+    background-color: #f0f0f0;
+  }
+
+  .hamburger {
+    z-index: 10; /*Ensure hamburger is above other content*/
+  }
+
+  .hero-section {
+    padding: 40px 20px;
+  }
+
+  .featured-section {
+    padding: 50px 20px;
+  }
+
+  .contact-section {
+    padding: 40px 20px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .contact-title {
+    font-size: 24px; /* Adjust title size */
+    text-align: center;
+  }
+
+  .contact-description {
+    font-size: 14px; /* Adjust text size */
+    text-align: center; /* Center the description */
+    margin-bottom: 10px; /* Add some space between description and email */
+  }
+
+}

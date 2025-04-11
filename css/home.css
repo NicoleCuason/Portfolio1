@@ -1,0 +1,617 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Allow footer to be pushed down */
+}
+
+/* Hamburger menu icon (hidden by default) */
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  background-color: #192026;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* Show the hamburger menu on small screens */
+@media (max-width: 640px) {
+  .hamburger {
+    display: flex;
+    z-index: inherit;
+  }
+
+  /* Hide the main navigation links on small screens */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000; /* Ensure nav menu is above other elements */
+    position: absolute;  /* Already set in mobile media query */
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+}
+
+
+/* Header Styles */
+.main-header {
+  background-color: #fff;
+  border: 1px solid #fff;
+  padding: 13px 70px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #192026;
+}
+
+.header-container {
+  max-width: 1430px;
+  margin: 0 auto;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 98px;
+  height: 99px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #192026;
+}
+
+.nav-link-active {
+  color: #b79e76;
+}
+
+/* Hero section styles */
+.hero-section {
+  background-color: rgba(191, 136, 151, 0.3);
+  border: 1px solid rgba(191, 136, 151, 0.3);
+  padding: 40px 196px;
+  opacity: 0; /* Start with the section hidden */
+  animation: fadeInSection 2s ease-in-out forwards; /* Apply fade-in effect to the entire hero section */
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping of elements */
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  text-align: left; /* Ensure text is aligned to the left */
+  margin-left: 50px; /* Adjust this value for the desired indentation */
+}
+
+/* Hero name fade-in */
+.hero-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 0.2s; /* Delay for staggered effect */
+}
+
+/* Hero title fade-in */
+.hero-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 0.5s; /* Delay for staggered effect */
+}
+
+/* Hero description fade-in */
+.hero-description {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  max-width: 600px;
+  margin-top: 10px;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 0.8s; /* Delay for staggered effect */
+}
+
+/* Keyframes for opacity animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1; /* Full opacity */
+  }
+}
+
+/* Keyframes for fading in the hero section */
+@keyframes fadeInSection {
+  0% {
+    opacity: 0; /* Start hidden */
+  }
+  100% {
+    opacity: 1; /* Fade in completely */
+  }
+}
+
+/* Star container and icon */
+.star-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: shine 5s infinite alternate; /* Smooth shine animation */
+}
+
+.star-icon {
+  width: 182px;
+  height: 192px;
+  animation: shine 5s infinite alternate; /* Apply shine effect */
+}
+
+/* Keyframe for the glowing/shining effect */
+@keyframes shine {
+  0% {
+    filter: drop-shadow(0 0 5px rgb(183, 158, 118, 0.7)) brightness(1); /* Soft shadow and normal brightness */
+  }
+  25% {
+    filter: drop-shadow(0 0 20px rgb(183, 158, 118, 0.7)) brightness(1.5); /* Stronger shadow and brighter */
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgb(183, 158, 118, 0.7)) brightness(1); /* Soft shadow and normal brightness */
+  }
+}
+
+/* Keyframes for fading in the featured section */
+@keyframes fadeInFeatured {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Featured section styles */
+.featured-section {
+  padding: 50px 196px;
+  margin-bottom: 40px;
+  opacity: 0; /* Start with the section hidden */
+  animation: fadeInFeatured 2s ease-in-out forwards; /* Apply fade-in effect */
+}
+
+.section-title {
+  color: #000;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+  justify-items: center;
+  max-width: 1200px; /*Limit max width of the grid*/
+  margin: 0 auto; /*Center the grid*/
+}
+
+.project-card {
+  border: 20px solid #192026;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 500px; /* Limit the width of each card */
+  margin: 0 auto; /* Center the cards within the grid */
+}
+
+
+/* Add the card link styles here */
+.project-card-link {
+  display: block; /* Makes the whole card clickable */
+  text-decoration: none; /* Remove underlines from the links */
+}
+
+/* Optional: Add hover effect to cards */
+.project-card-link:hover .project-image-container img {
+  opacity: 0.8; /* Add a slight opacity effect when hovering over the card */
+}
+
+/* New hover effects for card */
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover {
+  transform: scale(1.05); /* Adds a hover effect to scale the card */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Optional: Add subtle shadow effect on hover */
+.card-link:hover .project-card {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Adds a shadow on hover */
+}
+
+/* Optional: Adjust the image opacity when hovering over the card */
+.card-link:hover .project-image-container img {
+  opacity: 0.8; /* Slightly fade the image on hover */
+}
+
+/* Ensure the project card has smooth transition */
+.project-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for box-shadow */
+}
+/*Make project-card a link */
+.project-card-link {
+  display: block; /*Makes the whole card clickable*/
+  text-decoration: none; /*Remove underlines from the links*/
+}
+
+/*Adjust the image container*/
+.project-image-container {
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%; 
+  height: 100%; 
+  object-position: center;
+  max-width: auto;
+  margin-bottom: 1rem;
+}
+
+.project-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.project-category {
+  color: #bf8897;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.project-title {
+  color: #192026;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.project-description {
+  color: #192026;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 20px;
+  flex-grow: 1;
+  word-wrap: break-word;
+  overflow: hidden;
+
+}
+
+.project-description p {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*Call to the action button*/
+.cta-button {
+  display: inline-block;
+  color: #192026;
+  font-size: 24px;
+  font-weight: 700;
+  width: 270px;
+  height: 42px;
+  background-color: #b79e76;
+  border: 1px solid #192026;
+  text-decoration: none;
+  text-align: center;
+  line-height: 42px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+.cta-button:hover {
+  background-color: #192026; /* Darken the background color when hovered */
+  color: #fff; /* Change text color to white on hover */
+  transform: scale(1.05); /* Slightly scale the button for visual effect */
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 991px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* 1 column on smaller screens */
+  }
+}
+
+
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+    padding: 0 20px; /* Add some padding on the sides */
+  }
+}
+
+
+/* Footer Contact Section Adjustments */
+.contact-section {
+  background-color: rgba(191, 136, 151, 0.6);
+  border: 1px solid rgba(191, 136, 151, 0.6);
+  padding: 40px 196px; /*reduced padding for mobile view*/
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title {
+  color: #000;
+  font-size: 28px;
+  font-weight: 700;
+  align-items: flex-start;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-description {
+  color: #000;
+  font-size: 16px; /*Adjust font size*/
+  font-weight: 400;
+  max-width: 100%; /*Ensure text wraps properly*/
+  margin-bottom: 20px; 
+  padding: 0 10px; /*Add padding to ensure content isn't too close to edges*/
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-links a {
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+}
+
+.contact-links img {
+  width: 100%;
+  height: 100%;
+}
+
+.email {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.social-link img {
+  width: 33px;
+  height: 33px;
+}
+
+.cta-button {
+  display: inline-block;
+  color: #192026;
+  font-size: 24px;
+  font-weight: 700;
+  width: 270px;
+  height: 42px;
+  background-color: #b79e76;
+  border: 1px solid #192026;
+  text-decoration: none;
+  text-align: center;
+  line-height: 42px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+  .main-header {
+    padding: 0 40px;
+  }
+
+  .hero-section {
+    padding: 40px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .featured-section {
+    padding: 50px 40px;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+  }
+
+  .contact-section {
+    padding: 40px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+/*Show the navigation links when hamburger is clicked */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .main-header {
+    padding: 0 20px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .main-nav.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-link {
+    font-size: 20px; /* Increase font size for readability */
+    padding: 10px;
+    text-align: center;
+    display: block; /* Ensure they stack properly */
+    width: 100%;
+  }
+
+  .nav-link:hover {
+    background-color: #f0f0f0;
+  }
+
+  .hamburger {
+    z-index: 10; /*Ensure hamburger is above other content*/
+  }
+
+  .hero-section {
+    padding: 40px 20px;
+  }
+
+  .featured-section {
+    padding: 50px 20px;
+  }
+
+  .contact-section {
+    padding: 40px 20px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .contact-title {
+    font-size: 24px; /* Adjust title size */
+    text-align: center;
+  }
+
+  .contact-description {
+    font-size: 14px; /* Adjust text size */
+    text-align: center; /* Center the description */
+    margin-bottom: 10px; /* Add some space between description and email */
+  }
+
+}
